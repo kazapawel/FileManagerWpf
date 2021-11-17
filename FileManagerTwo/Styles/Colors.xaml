@@ -1,0 +1,53 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:FileManagerTwo">
+
+    <!-- Background main dark color -->
+    <Color x:Key="BackgroundDarkColor">#121212</Color>
+    <SolidColorBrush x:Key="BackgroundDarkBrush" Color="{StaticResource BackgroundDarkColor}"/>
+
+    <!-- Background main medium dark -->
+    <Color x:Key="BackgroundMediumDarkColor">#181818</Color>
+    <SolidColorBrush x:Key="BackgroundMediumDarkBrush" Color="{StaticResource BackgroundMediumDarkColor}"/>
+
+    <!-- Background main medium dark -->
+    <Color x:Key="BackgroundLightDarkColor">#262833</Color>
+    <SolidColorBrush x:Key="BackgroundLightDarkBrush" Color="{StaticResource BackgroundLightDarkColor}"/>
+
+    
+
+    <!-- Background BROWN dark -->
+    <Color x:Key="BackgroundBrownDarkColor">#27241d</Color>
+    <SolidColorBrush x:Key="BackgroundBrownDarkBrush" Color="{StaticResource BackgroundBrownDarkColor}"/>
+
+    <!-- Background BROWN light -->
+    <Color x:Key="BackgroundBrownLightColor">#282925</Color>
+    <SolidColorBrush x:Key="BackgroundBrownLightBrush" Color="{StaticResource BackgroundBrownLightColor}"/>
+
+    <!-- Background BROWN light -->
+    <Color x:Key="BackgroundBrownTestColor">#272822</Color>
+    <SolidColorBrush x:Key="BackgroundBrownTestBrush" Color="{StaticResource BackgroundBrownTestColor}"/>
+
+
+
+    <!--#B4AFAA -->
+    <!-- Foreground main color -->
+    <Color x:Key="ForegroundMainColor">#FAF9F7</Color>
+    <SolidColorBrush x:Key="ForegroundMainBrush" Color="{StaticResource ForegroundMainColor}"/>
+
+    <!-- Foreground test color -->
+    <Color x:Key="ForegroundTestColor">#C9CCC9</Color>
+    <SolidColorBrush x:Key="ForegroundTestBrush" Color="{StaticResource ForegroundTestColor}"/>
+
+    <!-- Foreground regular color -->
+    <Color x:Key="ForegrounRegularColor">#e8e6e1</Color>
+    <SolidColorBrush x:Key="ForegroundRegularBrush" Color="{StaticResource ForegrounRegularColor}"/>
+
+    <!-- Foreground dark color-->
+    <Color x:Key="ForegroundDarkColor">#616161</Color>
+    <SolidColorBrush x:Key="ForegroundDarkBrush" Color="{StaticResource ForegroundDarkColor}"/>
+
+    <Color x:Key="RedPastel">#CD4B49</Color>
+    <SolidColorBrush x:Key="RedPastelBrush" Color="{StaticResource RedPastel}"/>
+
+</ResourceDictionary>

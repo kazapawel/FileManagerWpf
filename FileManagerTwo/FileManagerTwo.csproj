@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B28FB27A-6B33-472D-8BDC-3E88D0C3999C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FileManagerTwo</RootNamespace>
+    <AssemblyName>FileManagerTwo</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Controls\DriveItemControl.xaml.cs">
+      <DependentUpon>DriveItemControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FileBrowserModuleControl.xaml.cs">
+      <DependentUpon>FileBrowserModuleControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FileItemControl.xaml.cs">
+      <DependentUpon>FileItemControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\DrivetypeToImageConverter.cs" />
+    <Compile Include="Converters\FiletypeToImageConverter.cs" />
+    <Compile Include="Converters\FreeSpaceMultiValueConverter.cs" />
+    <Compile Include="Converters\FreeSpaceToPercentageConverter.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\DirectoryItemViewModel.cs" />
+    <Compile Include="ViewModels\DriveItemViewModel.cs" />
+    <Compile Include="ViewModels\FileBrowserViewModel.cs" />
+    <Compile Include="ViewModels\FileItemViewModel.cs" />
+    <Compile Include="ViewModels\HelperMethods.cs" />
+    <Compile Include="ViewModels\RelayCommand.cs" />
+    <Page Include="Controls\DriveItemControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\FileBrowserModuleControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\FileItemControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Styles\Button.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Colors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\ContextMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Fonts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Image.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Listbox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\ScrollBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\ScrollViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\TextBlock.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\DirectoryItem.cs" />
+    <Compile Include="Model\DriveItem.cs" />
+    <Compile Include="Model\FileBrowser.cs" />
+    <Compile Include="Model\FileItem.cs" />
+    <Compile Include="Model\FileItemType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Resource Include="Fonts\Fira_Sans\FiraSans-Black.ttf" />
+    <Resource Include="Fonts\Fira_Sans\FiraSans-BlackItalic.ttf" />
+    <Resource Include="Fonts\Fira_Sans\FiraSans-Bold.ttf" />
+    <Resource Include="Fonts\Fira_Sans\FiraSans-BoldItalic.ttf" />
+    <Resource Include="Fonts\Fira_Sans\FiraSans-ExtraBold.ttf" />
+    <Resource Include="Fonts\Fira_Sans\FiraSans-ExtraBoldItalic.ttf" />
+    <Resource Include="Fonts\Fira_Sans\FiraSans-ExtraLight.ttf" />
+    <Resource Include="Fonts\Fira_Sans\FiraSans-ExtraLightItalic.ttf" />
+    <Resource Include="Fonts\FiraSans-Italic.ttf" />
+    <Resource Include="Fonts\FiraSans-Light.ttf" />
+    <Resource Include="Fonts\Fira_Sans\FiraSans-LightItalic.ttf" />
+    <Resource Include="Fonts\FiraSans-Medium.ttf" />
+    <Resource Include="Fonts\Fira_Sans\FiraSans-MediumItalic.ttf" />
+    <Resource Include="Fonts\FiraSans-Regular.ttf" />
+    <Resource Include="Fonts\Fira_Sans\FiraSans-SemiBold.ttf" />
+    <Resource Include="Fonts\Fira_Sans\FiraSans-SemiBoldItalic.ttf" />
+    <Resource Include="Fonts\Fira_Sans\FiraSans-Thin.ttf" />
+    <Resource Include="Fonts\Fira_Sans\FiraSans-ThinItalic.ttf" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\hardDrive1.png" />
+    <Resource Include="Icons\hardDrive2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\close_window.png" />
+    <Resource Include="Icons\maximize_window.png" />
+    <Resource Include="Icons\minimize_window.png" />
+    <Resource Include="Icons\restore_window.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\folder1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\file1.png" />
+    <Resource Include="Icons\file2.png" />
+    <Resource Include="Icons\hardDrive3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\usb1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\usb2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\folder2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\metroFile1.png" />
+    <Resource Include="Icons\metroFolder1.png" />
+    <Resource Include="Icons\metroHDD1.png" />
+    <Resource Include="Icons\metroHDD2.png" />
+    <Resource Include="Icons\metroUsb1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\metroHDD3.png" />
+    <Resource Include="Icons\metroUSB3.png" />
+    <Resource Include="Icons\niceHDD1.png" />
+    <Resource Include="Icons\niceHDD2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Fonts\Fira_Sans\OFL.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,50 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:FileManagerTwo">
+
+    <!-- REGULAR font -->
+    <Style TargetType="{x:Type TextBlock}" x:Key="FiraSansRegular">
+        <Setter Property="FontFamily" Value="/Fonts/FiraSans-Regular.ttf #Fira Sans"/>
+    </Style>
+
+    <!-- LIGHT font -->
+    <Style TargetType="{x:Type TextBlock}" x:Key="FiraSansLight">
+        <Setter Property="FontFamily" Value="/Fonts/FiraSans-Light.ttf #Fira Sans Light"/>
+    </Style>
+
+    <!-- ITALIC font -->
+    <Style TargetType="{x:Type TextBlock}" x:Key="FiraSansItalic">
+        <Setter Property="FontFamily" Value="/Fonts/FiraSans-Italic.ttf #Fira Sans"/>
+    </Style>
+
+    <!-- Medium font -->
+    <Style TargetType="{x:Type TextBlock}" x:Key="FiraSansMedium">
+        <Setter Property="FontFamily" Value="/Fonts/FiraSans-Medium.ttf #Fira Sans Medium"/>
+    </Style>
+    
+    <!-- Basic textblock -->
+    <Style TargetType="{x:Type TextBlock}" x:Key="BasicTextblock" BasedOn="{StaticResource FiraSansRegular}">
+        <Setter Property="Foreground" Value="{StaticResource ForegroundMainBrush}"/>
+    </Style>
+
+    <!-- Info textblock-->
+    <Style TargetType="{x:Type TextBlock}" x:Key="InfoTextblock" BasedOn="{StaticResource BasicTextblock}">
+        <Setter Property="Padding" Value="3,1,3,1"/>
+        <Setter Property="FontSize" Value="12"/>
+    </Style>
+
+    <!-- Item textblock style-->
+    <Style TargetType="{x:Type TextBlock}" x:Key="ItemTextblock" BasedOn="{StaticResource FiraSansRegular }">
+        
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="Padding" Value="2,4,2,4"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <!-- Popup context menu item style -->
+    <Style TargetType="{x:Type TextBlock}" x:Key="ContextmenuTextblock" BasedOn="{StaticResource FiraSansLight}">
+        <Setter Property="Foreground" Value="{StaticResource ForegroundMainBrush}"/>
+    </Style>
+
+    
+</ResourceDictionary>

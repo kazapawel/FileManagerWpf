@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="FileManagerTwo.FileItemControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FileManagerTwo"
+             mc:Ignorable="d" >
+    
+    <UserControl.InputBindings>
+        <MouseBinding MouseAction="LeftDoubleClick" 
+                      Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBox}}, Path=DataContext.DoubleClickItemCommand}"/>
+    </UserControl.InputBindings>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            
+            <!-- Folder/file image -->
+            <ColumnDefinition Width="auto"/>
+            
+            <!-- Item name-->
+            <ColumnDefinition Width="*"/>
+
+            <!-- Item size-->
+            <ColumnDefinition Width="auto" />
+            
+            <!-- Item attributes -->
+            <ColumnDefinition Width="auto"/>
+            
+        </Grid.ColumnDefinitions>
+
+        
+        <!-- Image -->
+        <Image Grid.Column="0" 
+               Source="{Binding Path=Type, Converter={StaticResource FiletypeToImageConverter}}"
+               Width="22" 
+               Height="22"           
+               />
+
+        <!-- Name -->
+        <TextBlock Grid.Column="1"
+                   Style="{StaticResource ItemTextblock}"
+                   Text="{Binding Name}"
+                   Width="250"
+                   TextTrimming="CharacterEllipsis"
+                   HorizontalAlignment="Left"
+                   />
+        
+        <!-- Size-->
+        <TextBlock Grid.Column="2"
+                   Style="{StaticResource ItemTextblock}"
+                   TextAlignment="Right"
+                   Text="{Binding Size}"
+                   Margin="5 0 2 0"
+                   Width="70"
+                   HorizontalAlignment="Right"
+                   />
+
+    </Grid>
+</UserControl>
