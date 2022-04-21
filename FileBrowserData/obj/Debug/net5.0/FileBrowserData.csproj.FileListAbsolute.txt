@@ -1,0 +1,12 @@
+C:\Users\user\source\repos\FileManagerMVVM-master\FileBrowserData\bin\Debug\net5.0\FileBrowserData.deps.json
+C:\Users\user\source\repos\FileManagerMVVM-master\FileBrowserData\bin\Debug\net5.0\FileBrowserData.dll
+C:\Users\user\source\repos\FileManagerMVVM-master\FileBrowserData\bin\Debug\net5.0\FileBrowserData.pdb
+C:\Users\user\source\repos\FileManagerMVVM-master\FileBrowserData\obj\Debug\net5.0\FileBrowserData.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\FileManagerMVVM-master\FileBrowserData\obj\Debug\net5.0\FileBrowserData.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\FileManagerMVVM-master\FileBrowserData\obj\Debug\net5.0\FileBrowserData.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\FileManagerMVVM-master\FileBrowserData\obj\Debug\net5.0\FileBrowserData.AssemblyInfo.cs
+C:\Users\user\source\repos\FileManagerMVVM-master\FileBrowserData\obj\Debug\net5.0\FileBrowserData.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\FileManagerMVVM-master\FileBrowserData\obj\Debug\net5.0\FileBrowserData.dll
+C:\Users\user\source\repos\FileManagerMVVM-master\FileBrowserData\obj\Debug\net5.0\refint\FileBrowserData.dll
+C:\Users\user\source\repos\FileManagerMVVM-master\FileBrowserData\obj\Debug\net5.0\FileBrowserData.pdb
+C:\Users\user\source\repos\FileManagerMVVM-master\FileBrowserData\obj\Debug\net5.0\ref\FileBrowserData.dll

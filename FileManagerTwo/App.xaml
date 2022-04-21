@@ -1,0 +1,63 @@
+﻿<Application x:Class="FileManagerTwo.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:FileManagerTwo"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <ResourceDictionary.MergedDictionaries>
+
+                <!-- Fonts -->
+                <ResourceDictionary Source="Styles/Fonts.xaml"/>
+
+                <!-- Colors -->
+                <ResourceDictionary Source="Styles/Colors.xaml"/>
+
+                <!-- Textblock styles -->
+                <ResourceDictionary Source="Styles/Textblock.xaml"/>
+
+                <!-- Scroll bar styles -->
+                <ResourceDictionary Source="Styles/ScrollBar.xaml"/>
+                
+                <!-- Scroll viewer styles-->
+                <ResourceDictionary Source="Styles/ScrollViewer.xaml"/>
+
+                <!-- Window styles -->
+                <ResourceDictionary Source="Styles/Window.xaml"/>
+                
+                <!-- Button styles -->
+                <ResourceDictionary Source="Styles/Button.xaml"/>
+                
+                <!-- Listbox styles -->
+                <ResourceDictionary Source="Styles/Listbox.xaml"/>
+
+                <!-- Images styles -->
+                <ResourceDictionary Source="Styles/Image.xaml"/>
+
+                <!-- Context menu styles -->
+                <ResourceDictionary Source="Styles/ContextMenu.xaml"/>
+
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- -->
+            <Style TargetType="{x:Type TextBlock}" >
+                <Setter Property="FontFamily" Value="/Fonts/FiraSans-Italic.ttf #Fira Sans"/>
+                <Setter Property="FontSize" Value="18"/>
+            </Style>
+
+            <!-- -->
+            
+            
+            
+            <!-- Converters -->
+            <local:DrivetypeToImageConverter x:Key="DrivetypeToImageConverter"/>
+            <local:FiletypeToImageConverter x:Key="FiletypeToImageConverter"/>
+            <local:FreeSpaceToPercentageConverter x:Key="FreeSpaceToPercentageConverter"/>
+            <local:FreeSpaceMultiValueConverter x:Key="FreeSpaceMultivalueConverter"/>
+
+        </ResourceDictionary>
+       
+
+    </Application.Resources>
+</Application>

@@ -1,0 +1,83 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <OutputType>WinExe</OutputType>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWPF>true</UseWPF>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+  </PropertyGroup>
+  <ItemGroup>
+    <Resource Include="Fonts\Fira_Sans\FiraSans-Black.ttf" />
+    <Resource Include="Fonts\Fira_Sans\FiraSans-BlackItalic.ttf" />
+    <Resource Include="Fonts\Fira_Sans\FiraSans-Bold.ttf" />
+    <Resource Include="Fonts\Fira_Sans\FiraSans-BoldItalic.ttf" />
+    <Resource Include="Fonts\Fira_Sans\FiraSans-ExtraBold.ttf" />
+    <Resource Include="Fonts\Fira_Sans\FiraSans-ExtraBoldItalic.ttf" />
+    <Resource Include="Fonts\Fira_Sans\FiraSans-ExtraLight.ttf" />
+    <Resource Include="Fonts\Fira_Sans\FiraSans-ExtraLightItalic.ttf" />
+    <Resource Include="Fonts\FiraSans-Italic.ttf" />
+    <Resource Include="Fonts\FiraSans-Light.ttf" />
+    <Resource Include="Fonts\Fira_Sans\FiraSans-LightItalic.ttf" />
+    <Resource Include="Fonts\FiraSans-Medium.ttf" />
+    <Resource Include="Fonts\Fira_Sans\FiraSans-MediumItalic.ttf" />
+    <Resource Include="Fonts\FiraSans-Regular.ttf" />
+    <Resource Include="Fonts\Fira_Sans\FiraSans-SemiBold.ttf" />
+    <Resource Include="Fonts\Fira_Sans\FiraSans-SemiBoldItalic.ttf" />
+    <Resource Include="Fonts\Fira_Sans\FiraSans-Thin.ttf" />
+    <Resource Include="Fonts\Fira_Sans\FiraSans-ThinItalic.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\hardDrive1.png" />
+    <Resource Include="Icons\hardDrive2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\close_window.png" />
+    <Resource Include="Icons\maximize_window.png" />
+    <Resource Include="Icons\minimize_window.png" />
+    <Resource Include="Icons\restore_window.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\folder1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\file1.png" />
+    <Resource Include="Icons\file2.png" />
+    <Resource Include="Icons\hardDrive3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\usb1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\usb2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\folder2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\metroFile1.png" />
+    <Resource Include="Icons\metroFolder1.png" />
+    <Resource Include="Icons\metroHDD1.png" />
+    <Resource Include="Icons\metroHDD2.png" />
+    <Resource Include="Icons\metroUsb1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\metroHDD3.png" />
+    <Resource Include="Icons\metroUSB3.png" />
+    <Resource Include="Icons\niceHDD1.png" />
+    <Resource Include="Icons\niceHDD2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Fonts\Fira_Sans\OFL.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FileBrowserData\FileBrowserData.csproj" />
+    <ProjectReference Include="..\FileBrowserServices\FileBrowserServices.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.3.310801">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Windows.Compatibility" Version="6.0.0" />
+  </ItemGroup>
+</Project>

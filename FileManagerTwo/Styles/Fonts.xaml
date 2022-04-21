@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:FileManagerTwo">
+
+    <FontFamily x:Key="FiraSansRegular">pack://appliction;,,,/Fonts/Fira_Sans/Fira Sans</FontFamily>
+    <FontFamily x:Key="FiraSansLight">Fonts/Fira_Sans/Fira Sans Light</FontFamily>
+    <FontFamily x:Key="FiraSansBold">pack://appliction;,,,/Fonts/Fira_Sans/Fira Sans ExtraBold</FontFamily>
+    <FontFamily x:Key="FiraSansItalic">pack://appliction;,,,/Fonts/FiraSans-Italic.ttf</FontFamily>
+    
+</ResourceDictionary>

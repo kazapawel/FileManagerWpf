@@ -1,0 +1,214 @@
+﻿<UserControl x:Class="FileManagerTwo.FileBrowserModuleControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FileManagerTwo"
+             mc:Ignorable="d" >
+
+    <!-- View model binding -->
+    <UserControl.DataContext>
+        <local:FileBrowserVM/>
+    </UserControl.DataContext>
+
+
+
+    <!-- Main border around file browser module -->
+    <Border x:Name="FileBrowserBorder"
+            BorderThickness="1" 
+            BorderBrush="Red"
+            Margin="5">
+
+        <!--#region  MAIN GRID DEFINITIONS -->
+        
+        <Grid>
+            <Grid.RowDefinitions>
+
+                <!-- Drives list and drive info -->
+                <RowDefinition Height="auto"/>
+
+                <!-- Active directory info display -->
+                <RowDefinition Height="auto"/>
+
+                <!-- Directory content display -->
+                <RowDefinition Height="*"/>
+
+                <!-- Selected item info-->
+                <RowDefinition Height="auto"/>
+
+            </Grid.RowDefinitions>
+
+            <!--#endregion-->            
+            
+            <!--#region  DRIVES SECTION-->
+            
+
+            <Grid Grid.Row="0">
+                
+                <Grid.ColumnDefinitions>
+
+                    <!-- Drives list -->
+                    <ColumnDefinition Width="3*"/>
+
+                    <!-- Selected drives info -->
+                    <ColumnDefinition Width="*"/>
+
+                </Grid.ColumnDefinitions>
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                
+
+                <!-- DRIVES LIST listbox-->
+                <ListBox Grid.Column="0" Grid.Row="0"
+                         x:Name="drivesList"
+                         Style="{StaticResource DrivesListboxStyle}"
+                         ItemsSource="{Binding DrivesListObservable}"
+                         SelectedItem="{Binding SelectedDrive, Mode=TwoWay}"
+                         ItemContainerStyle="{StaticResource DrivesItemStyle}"/>
+
+
+                <!-- SELECTED drive info-->
+                <Border Grid.Column="1" Grid.Row="0" Grid.RowSpan="2"
+                        BorderBrush="LightPink"
+                        BorderThickness="1"
+                        Margin="3">
+
+                    <StackPanel>
+
+                        <!-- Volume label -->
+                        <TextBlock Style="{StaticResource InfoTextblock}"
+                                   Text="{Binding SelectedDrive.VolumeLabel}"
+                                   Background="DarkOrchid"
+                                   />
+
+                        <!-- Drive format-->
+                        <TextBlock Style="{StaticResource InfoTextblock}"
+                                   Text="{Binding SelectedDrive.DriveFormat}"
+                                   Background="CadetBlue"
+                                   />
+
+                        <!-- Total size-->
+                        <TextBlock Style="{StaticResource InfoTextblock}"
+                                   Text="{Binding SelectedDrive.SizeInfo}"
+                                   Background="DarkGoldenrod"
+                                   />
+
+                        <!-- Size bar -->
+                        <ProgressBar Orientation="Horizontal" 
+                                     HorizontalAlignment="Stretch"
+                                     MinWidth="100"
+                                     Margin="5"
+                                     Height="3"
+                                     Value="{Binding SelectedDrive.Percentage, Mode=OneWay}">
+                            
+                        </ProgressBar>
+
+                    </StackPanel>
+                </Border>
+
+            </Grid>
+
+            <!--#endregion-->
+
+            <!--#region DIRECTORY CONTENT -->
+            
+            
+            <!-- Full path-->
+            <TextBlock Grid.Row="1"
+                       Style="{StaticResource InfoTextblock}"
+                       Background="{StaticResource BackgroundBrownLightBrush}"
+                       Padding="3"
+                       Margin="3,1,3,0"
+                       Text="{Binding SelectedDrive.DirectoryActiveViewModel.FullPath}"                     
+                       />
+            
+            <!-- Items listbox-->
+            <ListBox Grid.Row="2"
+                     
+                     Style="{StaticResource DirectoryDisplayListboxStyle}"
+                     ItemsSource="{Binding SelectedDrive.DirectoryActiveViewModel.ItemsObservable}"
+                     ItemContainerStyle="{StaticResource FileItemStyle}"
+                     SelectedItem="{Binding SelectedDrive.DirectoryActiveViewModel.SelectedItem}">
+
+                <!-- Item context menu -->
+                <ListBox.ContextMenu>
+                    <ContextMenu BorderThickness="1"
+                                 BorderBrush="Red"
+                                 Background="{StaticResource BackgroundDarkBrush}">
+                        <ContextMenu.Items>
+
+                            <!-- Open -->
+                            <MenuItem Style="{StaticResource BaseMenuItem}"
+                                      Command="{Binding DoubleClickItemCommand}"
+                                      BorderBrush="{StaticResource RedPastelBrush}">
+                                <MenuItem.Header>
+                                    <TextBlock Style="{StaticResource ContextmenuTextblock}"
+                                               Text="Open"/>
+                                </MenuItem.Header>
+                            </MenuItem>
+
+                            <!-- Copy -->
+                            <MenuItem Style="{StaticResource BaseMenuItem}"
+                                      Command="{Binding DoubleClickItemCommand}"
+                                      BorderBrush="{StaticResource RedPastelBrush}">
+                                <MenuItem.Header>
+                                    <TextBlock Style="{StaticResource ContextmenuTextblock}"
+                                               Text="Copy"/>
+                                </MenuItem.Header>
+                            </MenuItem>
+
+                            <!-- Delete -->
+                            <MenuItem Style="{StaticResource BaseMenuItem}"
+                                      Command="{Binding DoubleClickItemCommand}"
+                                      BorderBrush="{StaticResource RedPastelBrush}">
+                                <MenuItem.Header>
+                                    <TextBlock Style="{StaticResource ContextmenuTextblock}"
+                                               Text="Delete"/>
+                                </MenuItem.Header>
+                            </MenuItem>
+                        </ContextMenu.Items>
+                    </ContextMenu>
+                </ListBox.ContextMenu>
+                
+            </ListBox>
+                     
+
+            <!-- Selected item info-->
+            <Border Grid.Row="4" 
+                    Background="{StaticResource RedPastelBrush}">
+                
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <!-- Name -->
+                        <ColumnDefinition Width="*"/>
+                        
+                        <!-- Creation time-->
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    
+                    <!-- Name-->
+                    <TextBlock Grid.Column="0"
+                               Style="{StaticResource InfoTextblock}"
+                               Padding="3,2,3,2"
+                               Text="{Binding SelectedDrive.DirectoryActiveViewModel.SelectedItem.Name}"
+                               />
+
+                    <!-- Creation time -->
+                    <TextBlock Grid.Column="1" 
+                               Style="{StaticResource InfoTextblock}"
+                               Padding="3,2,3,2"
+                               Text="{Binding SelectedDrive.DirectoryActiveViewModel.SelectedItem.CreationTime}"
+                               />
+                </Grid>
+               
+            </Border>
+
+            <!--#endregion-->
+
+        </Grid>
+    </Border>
+</UserControl>

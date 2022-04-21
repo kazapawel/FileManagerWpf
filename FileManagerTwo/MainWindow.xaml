@@ -1,0 +1,115 @@
+﻿<Window x:Class="FileManagerTwo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FileManagerTwo"
+        mc:Ignorable="d"
+        Title="MainWindow" MinHeight="700" 
+        Height="700" Width="1050"
+        WindowStartupLocation="CenterScreen"
+        Style="{StaticResource MainWindowStyle}">
+
+    <Window.DataContext>
+        <local:FileBrowserVM/>
+    </Window.DataContext>
+
+    <!-- Main border-->
+    <Border BorderThickness="0.3" 
+            BorderBrush="{StaticResource ForegroundDarkBrush}"
+            CornerRadius="5"
+            Margin="3">
+
+        <!-- Main grid-->
+        <Grid>
+            <Grid.RowDefinitions>
+                
+                <!-- Title bar -->
+                <RowDefinition Height="30"/>
+
+                <!-- File browser content-->
+                <RowDefinition Height="*"/>
+                
+            </Grid.RowDefinitions>
+            
+            <!--#region TITLE BAR -->
+            
+            <!-- TITLE BAR -->
+                <Grid Grid.Row="0" Background="{StaticResource BackgroundMediumDarkBrush}">
+                    <Grid.ColumnDefinitions>
+
+                        <!-- Empty space-->
+                        <ColumnDefinition Width="*"/>
+
+                        <!-- Minimize button -->
+                        <ColumnDefinition Width="auto"/>
+
+                        <!-- Maximize button-->
+                        <ColumnDefinition Width="auto"/>
+
+                        <!-- Close button-->
+                        <ColumnDefinition Width="auto"/>
+
+                    </Grid.ColumnDefinitions>
+
+                    <!-- MINIMIZE button -->
+                    <Button Grid.Column="1"
+                            Style="{StaticResource SystemIconButton}"
+                            Tag="pack://application:,,,/Icons/minimize_window.png"
+                            Click="MinimizeButton_Click"
+                            />
+
+                    <TextBlock Text="DUPAAAA" FontSize="20" Foreground="wHITE"/>
+
+                    <!-- MAXIMIZE button-->
+                    <Button Grid.Column="2"
+                            Content="[ ]"
+                            Style="{StaticResource SystemIconButton}"
+                            Tag="pack://application:,,,/Icons/maximize_window.png"
+                            Click="MaximizeButton_Click"
+                            />
+
+                    <!-- CLOSE button-->
+                    <Button Grid.Column="3"
+                            Style="{StaticResource SystemIconButton}"
+                            Tag="pack://application:,,,/Icons/close_window.png" HorizontalAlignment="Right" Margin="0,2,0,3"
+                            Click="CloseButton_Click"
+                            />
+
+                </Grid>
+
+                <!--#endregion-->
+            
+            <!--#region FILE BROWSER MAIN CONTENT -->
+            
+                <!-- File browser MAIN CONTENT-->
+            <Border x:Name="fileBrowserBorder" 
+                    Grid.Row="1" 
+                    BorderBrush="CornflowerBlue" 
+                    BorderThickness="1">
+                
+                <Grid>
+                    <Grid.ColumnDefinitions>
+
+                        <!-- Left browser -->
+                        <ColumnDefinition Width="*"/>
+
+                        <!-- Right browser -->
+                        <ColumnDefinition Width="*"/>
+
+                    </Grid.ColumnDefinitions>
+
+                    <!-- LEFT BROWSER -->
+                    <local:FileBrowserModuleControl Grid.Column="0"/>
+
+                    <local:FileBrowserModuleControl Grid.Column="1"/>
+
+                </Grid>
+            </Border>
+            
+            <!--#endregion-->
+            
+        </Grid>
+        
+    </Border>
+</Window>
