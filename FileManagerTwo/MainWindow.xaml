@@ -11,7 +11,7 @@
         Style="{StaticResource MainWindowStyle}">
 
     <Window.DataContext>
-        <local:FileBrowserVM/>
+        <local:ApplicationVM/>
     </Window.DataContext>
 
     <!-- Main border-->
@@ -82,7 +82,7 @@
             
             <!--#region FILE BROWSER MAIN CONTENT -->
             
-                <!-- File browser MAIN CONTENT-->
+                <!-- File browser MAIN CONTENT -->
             <Border x:Name="fileBrowserBorder" 
                     Grid.Row="1" 
                     BorderBrush="CornflowerBlue" 
@@ -100,9 +100,15 @@
                     </Grid.ColumnDefinitions>
 
                     <!-- LEFT BROWSER -->
-                    <local:FileBrowserModuleControl Grid.Column="0"/>
+                    <local:FileBrowserModuleControl Grid.Column="0"
+                                                    DataContext="{Binding FileBrowserLeftVM}"
+                                                    ItemDoubleClickCommand="{Binding DoubleClickItemCommand}"
+                                                    />
 
-                    <local:FileBrowserModuleControl Grid.Column="1"/>
+                    <local:FileBrowserModuleControl Grid.Column="1"
+                                                    DataContext="{Binding FileBrowserRightVM}"
+                                                    ItemDoubleClickCommand="{Binding DoubleClickItemCommand}"
+                                                    />
 
                 </Grid>
             </Border>

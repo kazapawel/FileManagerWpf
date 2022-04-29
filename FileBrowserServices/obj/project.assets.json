@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {}
+    "net5.0": {
+      "FileBrowserData/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/FileBrowserData.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FileBrowserData.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "FileBrowserData/1.0.0": {
+      "type": "project",
+      "path": "../FileBrowserData/FileBrowserData.csproj",
+      "msbuildProject": "../FileBrowserData/FileBrowserData.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net5.0": []
+    "net5.0": [
+      "FileBrowserData >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\user\\.nuget\\packages\\": {},
@@ -38,7 +57,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\user\\source\\repos\\FileManagerMVVM-master\\FileBrowserData\\FileBrowserData.csproj": {
+              "projectPath": "C:\\Users\\user\\source\\repos\\FileManagerMVVM-master\\FileBrowserData\\FileBrowserData.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

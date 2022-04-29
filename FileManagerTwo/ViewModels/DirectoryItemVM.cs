@@ -4,7 +4,7 @@ using FileBrowserData;
 
 namespace FileManagerTwo
 {
-    public class DirectoryItemViewModel : BaseViewModel
+    public class DirectoryItemVM : BaseViewModel
     {
         #region PRIVATE MEMBERS
 
@@ -16,7 +16,7 @@ namespace FileManagerTwo
         /// <summary>
         /// SelectedItem
         /// </summary>
-        private FileItemViewModel selectedItem;
+        private FileItemVM selectedItem;
 
         #endregion
 
@@ -68,12 +68,12 @@ namespace FileManagerTwo
         /// <summary>
         /// Items for display.
         /// </summary>
-        public ObservableCollection<FileItemViewModel> ItemsObservable { get; set; }
+        public ObservableCollection<FileItemVM> Items { get; set; }
 
         /// <summary>
         /// Represents currently selected item in items display.
         /// </summary>
-        public FileItemViewModel SelectedItem
+        public FileItemVM SelectedItem
         {
             get
             {
@@ -97,11 +97,11 @@ namespace FileManagerTwo
         /// Default constructor.
         /// </summary>
         /// <param name="directoryItem"></param>
-        public DirectoryItemViewModel(DirectoryItem directoryItem)
+        public DirectoryItemVM(DirectoryItem directoryItem)
         {
             model = directoryItem;
-            ItemsObservable = new ObservableCollection<FileItemViewModel>();
-            LoadItemsViewModels();
+            Items = GetItems();
+            SelectedItem = Items.FirstOrDefault();
         }
 
         #endregion
@@ -109,20 +109,22 @@ namespace FileManagerTwo
         #region METHODS
 
         /// <summary>
-        /// Loads items from model to observable collection.
+        /// Returns collection of file item view models.
         /// </summary>
-        private void LoadItemsViewModels()
+        private ObservableCollection<FileItemVM> GetItems() //=> new(model.Items.Select(x => new FileItemVM(x)));
         {
+            var items = new ObservableCollection<FileItemVM>();
+
             //Adds parent view model to the list
-            ItemsObservable.Add(new FileItemViewModel(model.Parent));
+            items.Add(new FileItemVM(model.Parent));
 
-            //model.Items.OrderBy(x => x.Type).ToList();
-            foreach (var file in model.Items.OrderBy(x => x.Type))
-                ItemsObservable.Add(new FileItemViewModel(file));
+            //Adds rest
+            foreach (var file in model.Items)
+                items.Add(new FileItemVM(file));
 
-            SelectedItem = ItemsObservable[0];
+            return items;
         }
-      
-        #endregion
-    }
+
+    #endregion
+}
 }

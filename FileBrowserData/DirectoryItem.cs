@@ -51,7 +51,7 @@ namespace FileBrowserData
             //TO DO: WHAT TO DO WITH THIS EXCEPTION, HOW TO INFORM USER ABOUT ACCESS DENIED
             try
             {
-                Items = directoryInfo.GetFileSystemInfos().Select(item => new FileItem(item));
+                Items = directoryInfo.GetFileSystemInfos().Select(item => new FileItem(item)).OrderBy(x => x.Type);
             }
             catch (UnauthorizedAccessException ex)
             {              

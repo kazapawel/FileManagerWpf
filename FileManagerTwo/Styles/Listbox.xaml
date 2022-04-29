@@ -134,13 +134,15 @@
                             Background="{TemplateBinding Background}"                           
                             BorderThickness="0"
                             BorderBrush="{TemplateBinding BorderBrush}">
-                        
+
                         <local:FileItemControl />
-                        
+
                     </Border>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+
+
     </Style>
 
 </ResourceDictionary>

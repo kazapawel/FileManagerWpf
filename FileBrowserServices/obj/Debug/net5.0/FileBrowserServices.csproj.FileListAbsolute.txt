@@ -10,3 +10,6 @@ C:\Users\user\source\repos\FileManagerMVVM-master\FileBrowserServices\obj\Debug\
 C:\Users\user\source\repos\FileManagerMVVM-master\FileBrowserServices\obj\Debug\net5.0\refint\FileBrowserServices.dll
 C:\Users\user\source\repos\FileManagerMVVM-master\FileBrowserServices\obj\Debug\net5.0\FileBrowserServices.pdb
 C:\Users\user\source\repos\FileManagerMVVM-master\FileBrowserServices\obj\Debug\net5.0\ref\FileBrowserServices.dll
+C:\Users\user\source\repos\FileManagerMVVM-master\FileBrowserServices\bin\Debug\net5.0\FileBrowserData.dll
+C:\Users\user\source\repos\FileManagerMVVM-master\FileBrowserServices\bin\Debug\net5.0\FileBrowserData.pdb
+C:\Users\user\source\repos\FileManagerMVVM-master\FileBrowserServices\obj\Debug\net5.0\FileBrowserServices.csproj.CopyComplete

@@ -5,22 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:FileManagerTwo"
              mc:Ignorable="d" >
-
-    <!-- View model binding -->
-    <UserControl.DataContext>
-        <local:FileBrowserVM/>
-    </UserControl.DataContext>
-
-
-
+    
     <!-- Main border around file browser module -->
     <Border x:Name="FileBrowserBorder"
             BorderThickness="1" 
             BorderBrush="Red"
             Margin="5">
 
-        <!--#region  MAIN GRID DEFINITIONS -->
-        
+        <!--#region  MAIN GRID DEFINITIONS -->      
         <Grid>
             <Grid.RowDefinitions>
 
@@ -40,9 +32,8 @@
 
             <!--#endregion-->            
             
-            <!--#region  DRIVES SECTION-->
             
-
+            <!--#region  DRIVES SECTION-->      
             <Grid Grid.Row="0">
                 
                 <Grid.ColumnDefinitions>
@@ -62,10 +53,11 @@
                 
 
                 <!-- DRIVES LIST listbox-->
-                <ListBox Grid.Column="0" Grid.Row="0"
+                <ListBox Grid.Column="0" 
+                         Grid.Row="0"
                          x:Name="drivesList"
                          Style="{StaticResource DrivesListboxStyle}"
-                         ItemsSource="{Binding DrivesListObservable}"
+                         ItemsSource="{Binding Drives}"
                          SelectedItem="{Binding SelectedDrive, Mode=TwoWay}"
                          ItemContainerStyle="{StaticResource DrivesItemStyle}"/>
 
@@ -75,9 +67,7 @@
                         BorderBrush="LightPink"
                         BorderThickness="1"
                         Margin="3">
-
                     <StackPanel>
-
                         <!-- Volume label -->
                         <TextBlock Style="{StaticResource InfoTextblock}"
                                    Text="{Binding SelectedDrive.VolumeLabel}"
@@ -102,10 +92,8 @@
                                      MinWidth="100"
                                      Margin="5"
                                      Height="3"
-                                     Value="{Binding SelectedDrive.Percentage, Mode=OneWay}">
-                            
-                        </ProgressBar>
-
+                                     Value="{Binding SelectedDrive.Percentage, Mode=OneWay}"
+                                     />
                     </StackPanel>
                 </Border>
 
@@ -113,25 +101,71 @@
 
             <!--#endregion-->
 
-            <!--#region DIRECTORY CONTENT -->
-            
-            
+            <!--#region DIRECTORY CONTENT -->          
             <!-- Full path-->
             <TextBlock Grid.Row="1"
                        Style="{StaticResource InfoTextblock}"
                        Background="{StaticResource BackgroundBrownLightBrush}"
                        Padding="3"
                        Margin="3,1,3,0"
-                       Text="{Binding SelectedDrive.DirectoryActiveViewModel.FullPath}"                     
+                       Text="{Binding SelectedDrive.Directory.FullPath}"                     
                        />
             
             <!-- Items listbox-->
             <ListBox Grid.Row="2"
-                     
+                     x:Name="activeDirectoryListbox"
                      Style="{StaticResource DirectoryDisplayListboxStyle}"
-                     ItemsSource="{Binding SelectedDrive.DirectoryActiveViewModel.ItemsObservable}"
-                     ItemContainerStyle="{StaticResource FileItemStyle}"
-                     SelectedItem="{Binding SelectedDrive.DirectoryActiveViewModel.SelectedItem}">
+                     ItemsSource="{Binding SelectedDrive.Directory.Items}"
+                     SelectedItem="{Binding SelectedDrive.Directory.SelectedItem}">
+                
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListBoxItem}">
+
+                        <!-- Selection style trigger -->
+                        <Style.Triggers>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsSelected" Value="True"/>
+                                </MultiTrigger.Conditions>
+
+                                <Setter Property="Background" Value="LightBlue"/>
+                                <Setter Property="Foreground" Value="DarkRed"/>
+                            </MultiTrigger>
+
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsSelected" Value="False"/>
+                                </MultiTrigger.Conditions>
+
+                                <Setter Property="Foreground" Value="{StaticResource ForegroundTestBrush}"/>
+                            </MultiTrigger>
+
+                            <!-- If file has hidden attribute -->
+                            <DataTrigger Binding="{Binding IsHidden}" Value="true">
+                                <Setter Property="Foreground" Value="{StaticResource ForegroundDarkBrush}"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+
+                        <!-- Template -->
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate>
+                                    <Border x:Name="border"
+                            Background="{TemplateBinding Background}"                           
+                            BorderThickness="0"
+                            BorderBrush="{TemplateBinding BorderBrush}">
+
+                                        <local:FileItemControl />
+
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <EventSetter Event="MouseDoubleClick" Handler="Item_MouseDoubleClick"/>
+
+
+                    </Style>
+                </ListBox.ItemContainerStyle>
 
                 <!-- Item context menu -->
                 <ListBox.ContextMenu>
@@ -194,14 +228,14 @@
                     <TextBlock Grid.Column="0"
                                Style="{StaticResource InfoTextblock}"
                                Padding="3,2,3,2"
-                               Text="{Binding SelectedDrive.DirectoryActiveViewModel.SelectedItem.Name}"
+                               Text="{Binding SelectedDrive.Directory.SelectedItem.Name}"
                                />
 
                     <!-- Creation time -->
                     <TextBlock Grid.Column="1" 
                                Style="{StaticResource InfoTextblock}"
                                Padding="3,2,3,2"
-                               Text="{Binding SelectedDrive.DirectoryActiveViewModel.SelectedItem.CreationTime}"
+                               Text="{Binding SelectedDrive.Directory.SelectedItem.CreationTime}"
                                />
                 </Grid>
                

@@ -982,6 +982,9 @@
         }
       },
       "FileBrowserServices/1.0.0": {
+        "dependencies": {
+          "FileBrowserData": "1.0.0"
+        },
         "runtime": {
           "FileBrowserServices.dll": {}
         }

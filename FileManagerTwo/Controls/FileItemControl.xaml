@@ -7,8 +7,7 @@
              mc:Ignorable="d" >
     
     <UserControl.InputBindings>
-        <MouseBinding MouseAction="LeftDoubleClick" 
-                      Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBox}}, Path=DataContext.DoubleClickItemCommand}"/>
+        
     </UserControl.InputBindings>
     <Grid>
         <Grid.ColumnDefinitions>

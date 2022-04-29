@@ -1,5 +1,4 @@
 ﻿using FileBrowserData;
-using System;
 using System.IO;
 
 namespace FileManagerTwo
@@ -7,7 +6,7 @@ namespace FileManagerTwo
     /// <summary>
     /// View model for system file item.
     /// </summary>
-    public class FileItemViewModel: BaseViewModel
+    public class FileItemVM: BaseViewModel
     {
         #region PRIVATE MEMBERS
 
@@ -42,13 +41,7 @@ namespace FileManagerTwo
         /// <summary>
         /// Item's full path
         /// </summary>
-        public string FullPath
-        {
-            get
-            {
-                return model.FullPath;
-            }
-        }
+        public string FullPath => model.FullPath;
 
         /// <summary>
         /// Returns item's size in string.
@@ -80,7 +73,7 @@ namespace FileManagerTwo
         /// Default constructor
         /// </summary>
         /// <param name="file"></param>
-        public FileItemViewModel(FileItem file)
+        public FileItemVM(FileItem file)
         {
             model = file;
         }

@@ -1,23 +1,23 @@
-﻿
-using System.Diagnostics;
-using System.IO;
+﻿using System.IO;
 using FileBrowserData;
 
 namespace FileManagerTwo
 {
     /// <summary>
-    /// Drive Item view model class.
+    /// View model for single drive.
     /// </summary>
-    public class DriveItemViewModel : BaseViewModel
+    public class DriveItemVM : BaseViewModel
     {
         #region PRIVATE MEMBERS
 
         private DriveItem model;
-        private DirectoryItemViewModel activeDirectory;
+        private DirectoryItemVM activeDirectory;
 
         #endregion
 
         #region PUBLIC PROPERTIES
+
+        #region INFO PROPERTIES
 
         /// <summary>
         /// TO DO: Changing name will be available via command.
@@ -32,7 +32,7 @@ namespace FileManagerTwo
         /// <summary>
         /// String representation if drive is ready.
         /// </summary>
-        public string IsReady => model.Info.IsReady.ToString();
+        public bool IsReady => model.Info.IsReady;
 
         /// <summary>
         /// Name of the file system type, such as NTFS or FAT32
@@ -45,7 +45,7 @@ namespace FileManagerTwo
         public DriveType DriveType => model.Info.DriveType;
 
         /// <summary>
-        /// Drive type for display
+        /// Drive type for display.
         /// </summary>
         public string DriveTypeName => model.Info.DriveType.ToString();
 
@@ -56,13 +56,15 @@ namespace FileManagerTwo
 
         public long FreeSpace => model.Info.AvailableFreeSpace;
         public long TotalSize => model.Info.TotalSize;
-
         public double Percentage => (double) ((model.Info.TotalSize - model.Info.AvailableFreeSpace) / (model.Info.TotalSize / 100));
+
+        #endregion
+
 
         /// <summary>
         /// Active directory view model.
         /// </summary>
-        public DirectoryItemViewModel DirectoryActiveViewModel
+        public DirectoryItemVM Directory
         {
             get
             {
@@ -73,10 +75,11 @@ namespace FileManagerTwo
                 if(activeDirectory!=value)
                 {
                     activeDirectory = value;
-                    OnPropertyChanged(nameof(DirectoryActiveViewModel));
+                    OnPropertyChanged(nameof(Directory));
                 }
             }
         }
+
         #endregion
 
         #region COMMANDS 
@@ -89,15 +92,11 @@ namespace FileManagerTwo
         /// Default constructor
         /// </summary>
         /// <param name="driveItem"></param>
-        public DriveItemViewModel(DriveItem driveItem)
+        public DriveItemVM(DriveItem driveItem)
         {
             model = driveItem;
-            DirectoryActiveViewModel = new DirectoryItemViewModel(model.ActiveDirectory);
+            Directory = new DirectoryItemVM(model.ActiveDirectory);
         }
-
-        #endregion
-
-        #region METHODS
 
         #endregion
     }

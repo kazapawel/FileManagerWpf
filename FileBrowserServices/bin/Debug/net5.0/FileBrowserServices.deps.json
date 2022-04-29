@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v5.0": {
       "FileBrowserServices/1.0.0": {
+        "dependencies": {
+          "FileBrowserData": "1.0.0"
+        },
         "runtime": {
           "FileBrowserServices.dll": {}
+        }
+      },
+      "FileBrowserData/1.0.0": {
+        "runtime": {
+          "FileBrowserData.dll": {}
         }
       }
     }
   },
   "libraries": {
     "FileBrowserServices/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FileBrowserData/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
