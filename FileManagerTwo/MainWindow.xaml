@@ -105,6 +105,7 @@
                                                     ItemDoubleClickCommand="{Binding DoubleClickItemCommand}"
                                                     />
 
+                    <!-- RIGHT BROWSER -->
                     <local:FileBrowserModuleControl Grid.Column="1"
                                                     DataContext="{Binding FileBrowserRightVM}"
                                                     ItemDoubleClickCommand="{Binding DoubleClickItemCommand}"

@@ -152,3 +152,5 @@ C:\Users\user\source\repos\FileManagerMVVM-master\FileManagerTwo\obj\Debug\net5.
 C:\Users\user\source\repos\FileManagerMVVM-master\FileManagerTwo\obj\Debug\net5.0-windows\FileManagerTwo.pdb
 C:\Users\user\source\repos\FileManagerMVVM-master\FileManagerTwo\obj\Debug\net5.0-windows\FileManagerTwo.genruntimeconfig.cache
 C:\Users\user\source\repos\FileManagerMVVM-master\FileManagerTwo\obj\Debug\net5.0-windows\ref\FileManagerTwo.dll
+C:\Users\user\source\repos\FileManagerMVVM-master\FileManagerTwo\obj\Debug\net5.0-windows\Controls\DriveslistControl.g.cs
+C:\Users\user\source\repos\FileManagerMVVM-master\FileManagerTwo\obj\Debug\net5.0-windows\Controls\DriveslistControl.baml

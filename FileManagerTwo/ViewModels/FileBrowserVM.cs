@@ -47,6 +47,9 @@ namespace FileManagerTwo
         #endregion
 
         public RelayCommand DoubleClickItemCommand { get; set; }
+        public RelayCommand CopyItemCommand { get; set; }
+        public RelayCommand DeleteItemCommand { get; set; }
+        public RelayCommand CutItemCommand { get; set; }
 
         #region CONSTRUCTOR
 
@@ -58,7 +61,10 @@ namespace FileManagerTwo
             filesService = new FileService();
             Drives = GetDrives();
             SelectedDrive = Drives.FirstOrDefault();
-            DoubleClickItemCommand = new RelayCommand(DoubleClickAction);
+            DoubleClickItemCommand = new RelayCommand(OpenItem);
+            CopyItemCommand = new RelayCommand(CopyItem);
+            DeleteItemCommand = new RelayCommand(DeleteItem);
+            CutItemCommand = new RelayCommand(CutItem);
         }
 
         #endregion
@@ -75,7 +81,7 @@ namespace FileManagerTwo
         /// Method for double click on item command.
         /// </summary>
         /// <param name="o"></param>
-        private void DoubleClickAction(object o)
+        private void OpenItem(object o)
         {
             // Gets path of selected item in current directory
             var path = SelectedDrive.Directory.SelectedItem.FullPath;
@@ -92,6 +98,21 @@ namespace FileManagerTwo
         /// </summary>
         private void OpenDirectory(string path) =>
             SelectedDrive.Directory = new DirectoryItemVM(filesService.GetDirectory(path));
+     
+        private void CopyItem(object o)
+        {
+
+        }
+
+        private void DeleteItem(object o)
+        {
+
+        }
+
+        private void CutItem(object o)
+        {
+
+        }
 
         #endregion
     }

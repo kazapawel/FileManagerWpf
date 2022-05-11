@@ -20,11 +20,19 @@ namespace FileManagerTwo
             DependencyProperty.Register("ItemDoubleClickCommand", typeof(ICommand), typeof(FileBrowserModuleControl), new PropertyMetadata(null));
 
 
+        /// <summary>
+        /// Default constructor
+        /// </summary>
         public FileBrowserModuleControl()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Executes ItemDoubleClickCommand.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Item_MouseDoubleClick(object sender, MouseButtonEventArgs e) =>
             ItemDoubleClickCommand?.Execute(activeDirectoryListbox.SelectedItem);
     }

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\user\source\repos\FileManagerMVVM-master\FileManagerTwo\App.xaml
-14-572771996
+15-1301095873
 
-20-1705863415
+21-750101367
 219971251457
-Controls\DriveItemControl.xaml;Controls\FileBrowserModuleControl.xaml;Controls\FileItemControl.xaml;MainWindow.xaml;Styles\Button.xaml;Styles\Colors.xaml;Styles\ContextMenu.xaml;Styles\Fonts.xaml;Styles\Image.xaml;Styles\Listbox.xaml;Styles\ScrollBar.xaml;Styles\ScrollViewer.xaml;Styles\TextBlock.xaml;Styles\Window.xaml;
+Controls\DriveItemControl.xaml;Controls\DriveslistControl.xaml;Controls\FileBrowserModuleControl.xaml;Controls\FileItemControl.xaml;MainWindow.xaml;Styles\Button.xaml;Styles\Colors.xaml;Styles\ContextMenu.xaml;Styles\Fonts.xaml;Styles\Image.xaml;Styles\Listbox.xaml;Styles\ScrollBar.xaml;Styles\ScrollViewer.xaml;Styles\TextBlock.xaml;Styles\Window.xaml;
 
 False
 

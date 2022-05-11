@@ -42,7 +42,7 @@ namespace FileManagerTwo
         }
 
         /// <summary>
-        /// Moving and deleting directory etc
+        /// Moving and deleting  directory etc
         /// </summary>
         public string FullPath
         {

@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:FileManagerTwo"
-             mc:Ignorable="d" >
+             mc:Ignorable="d">
     
     <!-- Main border around file browser module -->
     <Border x:Name="FileBrowserBorder"
@@ -59,14 +59,15 @@
                          Style="{StaticResource DrivesListboxStyle}"
                          ItemsSource="{Binding Drives}"
                          SelectedItem="{Binding SelectedDrive, Mode=TwoWay}"
-                         ItemContainerStyle="{StaticResource DrivesItemStyle}"/>
-
+                         ItemContainerStyle="{StaticResource DrivesItemStyle}"
+                         />
 
                 <!-- SELECTED drive info-->
                 <Border Grid.Column="1" Grid.Row="0" Grid.RowSpan="2"
                         BorderBrush="LightPink"
                         BorderThickness="1"
                         Margin="3">
+
                     <StackPanel>
                         <!-- Volume label -->
                         <TextBlock Style="{StaticResource InfoTextblock}"
@@ -96,7 +97,6 @@
                                      />
                     </StackPanel>
                 </Border>
-
             </Grid>
 
             <!--#endregion-->
@@ -186,7 +186,7 @@
 
                             <!-- Copy -->
                             <MenuItem Style="{StaticResource BaseMenuItem}"
-                                      Command="{Binding DoubleClickItemCommand}"
+                                      Command="{Binding CopyItemCommand}"
                                       BorderBrush="{StaticResource RedPastelBrush}">
                                 <MenuItem.Header>
                                     <TextBlock Style="{StaticResource ContextmenuTextblock}"
@@ -196,13 +196,24 @@
 
                             <!-- Delete -->
                             <MenuItem Style="{StaticResource BaseMenuItem}"
-                                      Command="{Binding DoubleClickItemCommand}"
+                                      Command="{Binding DeleteItemCommand}"
                                       BorderBrush="{StaticResource RedPastelBrush}">
                                 <MenuItem.Header>
                                     <TextBlock Style="{StaticResource ContextmenuTextblock}"
                                                Text="Delete"/>
                                 </MenuItem.Header>
                             </MenuItem>
+
+                            <!-- Cut -->
+                            <MenuItem Style="{StaticResource BaseMenuItem}"
+                                      Command="{Binding CutItemCommand}"
+                                      BorderBrush="{StaticResource RedPastelBrush}">
+                                <MenuItem.Header>
+                                    <TextBlock Style="{StaticResource ContextmenuTextblock}"
+                                               Text="Cut"/>
+                                </MenuItem.Header>
+                            </MenuItem>
+
                         </ContextMenu.Items>
                     </ContextMenu>
                 </ListBox.ContextMenu>
