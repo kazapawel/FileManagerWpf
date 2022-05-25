@@ -17,6 +17,69 @@
         </Setter>
     </Style>
 
+    <!-- System Icon BUTTON/TEXTBLOCK Style-->
+    <Style TargetType="{x:Type Button}" x:Key="SystemIconButtonTextblock" BasedOn="{StaticResource BaseEmptyButtonStyle}">
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="Opacity" Value="0.8"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Width" Value="45"/>
+        <Setter Property="Background" Value="Red"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+
+                    <!-- Border main -->
+                    <Border x:Name="ImageBorder"                                                      
+                            Padding="5" 
+                            Width="{TemplateBinding Width}"
+                            Height="{TemplateBinding Height}"
+                            Background="Transparent">
+
+                        <!-- Textblock -->
+                        <TextBlock x:Name="ButtonText"
+                                   Style="{StaticResource BasicTextblock}"
+                                   FontSize="14"
+                                   Foreground="White"                                  
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Text="{Binding Tag, RelativeSource={RelativeSource TemplatedParent}}"
+                                   />
+                    </Border>
+
+                    <!-- Triggers -->
+                    <ControlTemplate.Triggers>
+
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" 
+                                    TargetName="ImageBorder" 
+                                    Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Background}"/>
+                            <Setter Property="Opacity" Value="1"/>
+                        </Trigger>
+
+                        <!-- Animations -->
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetName="ButtonText" Storyboard.TargetProperty="FontSize" To="22" Duration="0:0:0:0.1" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetName="ButtonText" Storyboard.TargetProperty="FontSize" To="16" Duration="0:0:0:0.1" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <!-- -->
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
     <!-- System Icon Button Style-->
     <Style TargetType="{x:Type Button}" x:Key="SystemIconButton" BasedOn="{StaticResource BaseEmptyButtonStyle}">
         <Setter Property="Margin" Value="0"/>

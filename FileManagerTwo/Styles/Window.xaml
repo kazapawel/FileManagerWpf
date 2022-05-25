@@ -6,8 +6,10 @@
     <Style TargetType="{x:Type Window}" x:Key="MainWindowStyle">
         <Setter Property="WindowStyle" Value="None"/>
         <Setter Property="AllowsTransparency" Value="True"/>
-        <Setter Property="Background" Value="{StaticResource BackgroundDarkBrush}"/>
-        <Setter Property="Foreground" Value="{StaticResource ForegroundDarkBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}"/>
+        <Setter Property="Background" Value="{StaticResource BackgroundMainBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource ForegroundMainBrush}"/>
         <Setter Property="WindowChrome.WindowChrome">
             <Setter.Value>
                 <WindowChrome UseAeroCaptionButtons="True"
@@ -18,5 +20,24 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
+
+    <!-- Main window style 2  -->
+    <Style TargetType="{x:Type Window}" x:Key="MainWindowStyle2">
+        <Setter Property="WindowStyle" Value="None"/>
+        <Setter Property="AllowsTransparency" Value="True"/>
+        <Setter Property="Background" Value="{StaticResource BackgroundSimpleMainBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource ForegroundSimplePinkBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ForegroundSimpleBorderBrush}"/>
+        <Setter Property="WindowChrome.WindowChrome">
+            <Setter.Value>
+                <WindowChrome UseAeroCaptionButtons="True"
+                              GlassFrameThickness="0"
+                              CornerRadius="0"
+                              CaptionHeight="20"
+                              ResizeBorderThickness="9"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 </ResourceDictionary>

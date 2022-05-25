@@ -2,6 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:FileManagerTwo">
 
+    <!--#region FONTS -->
+    
     <!-- REGULAR font -->
     <Style TargetType="{x:Type TextBlock}" x:Key="FiraSansRegular">
         <Setter Property="FontFamily" Value="/Fonts/FiraSans-Regular.ttf #Fira Sans"/>
@@ -21,23 +23,39 @@
     <Style TargetType="{x:Type TextBlock}" x:Key="FiraSansMedium">
         <Setter Property="FontFamily" Value="/Fonts/FiraSans-Medium.ttf #Fira Sans Medium"/>
     </Style>
+
+    
+    <!-- Cascadia Mono font -->
+    <Style TargetType="{x:Type TextBlock}" x:Key="CascadiaMono">
+        <Setter Property="FontFamily" Value="Cascadia Mono"/>
+    </Style>
+
+    <!--#endregion-->
     
     <!-- Basic textblock -->
-    <Style TargetType="{x:Type TextBlock}" x:Key="BasicTextblock" BasedOn="{StaticResource FiraSansRegular}">
-        <Setter Property="Foreground" Value="{StaticResource ForegroundMainBrush}"/>
+    <Style TargetType="{x:Type TextBlock}" x:Key="BasicTextblock" BasedOn="{StaticResource CascadiaMono}">
+        <Setter Property="FontSize" Value="15"/>
     </Style>
 
-    <!-- Info textblock-->
-    <Style TargetType="{x:Type TextBlock}" x:Key="InfoTextblock" BasedOn="{StaticResource BasicTextblock}">
+    <!-- INFO textblock-->
+    <Style TargetType="{x:Type TextBlock}" x:Key="InfoTextblock" BasedOn="{StaticResource CascadiaMono}">
         <Setter Property="Padding" Value="3,1,3,1"/>
         <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Foreground" Value="{StaticResource ForegroundMainBrush}"/>
+        <Setter Property="Background" Value="{StaticResource BackgroundMainBrush}"/>
     </Style>
 
-    <!-- Item textblock style-->
-    <Style TargetType="{x:Type TextBlock}" x:Key="ItemTextblock" BasedOn="{StaticResource FiraSansRegular }">
-        
-        <Setter Property="FontSize" Value="13"/>
-        <Setter Property="Padding" Value="2,4,2,4"/>
+    <!-- INFO textblock 2-->
+    <Style TargetType="{x:Type TextBlock}" x:Key="InfoTextblock2" BasedOn="{StaticResource CascadiaMono}">
+        <Setter Property="Padding" Value="3,2,3,2"/>
+        <Setter Property="Foreground" Value="{StaticResource ForegroundMainBrush}"/>
+        <Setter Property="Background" Value="{StaticResource RedPastelBrush}"/>
+    </Style>
+
+    <!-- ITEM textblock style-->
+    <Style TargetType="{x:Type TextBlock}" x:Key="ItemTextblock" BasedOn="{StaticResource BasicTextblock}">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Padding" Value="3"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
     </Style>
 

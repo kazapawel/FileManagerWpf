@@ -8,8 +8,7 @@
     
     <!-- Main border around file browser module -->
     <Border x:Name="FileBrowserBorder"
-            BorderThickness="1" 
-            BorderBrush="Red"
+            BorderThickness="0" 
             Margin="5">
 
         <!--#region  MAIN GRID DEFINITIONS -->      
@@ -105,9 +104,6 @@
             <!-- Full path-->
             <TextBlock Grid.Row="1"
                        Style="{StaticResource InfoTextblock}"
-                       Background="{StaticResource BackgroundBrownLightBrush}"
-                       Padding="3"
-                       Margin="3,1,3,0"
                        Text="{Binding SelectedDrive.Directory.FullPath}"                     
                        />
             
@@ -151,19 +147,15 @@
                             <Setter.Value>
                                 <ControlTemplate>
                                     <Border x:Name="border"
-                            Background="{TemplateBinding Background}"                           
-                            BorderThickness="0"
-                            BorderBrush="{TemplateBinding BorderBrush}">
-
+                                            Background="{TemplateBinding Background}"                           
+                                            BorderThickness="0"
+                                            BorderBrush="{TemplateBinding BorderBrush}">
                                         <local:FileItemControl />
-
                                     </Border>
                                 </ControlTemplate>
                             </Setter.Value>
                         </Setter>
                         <EventSetter Event="MouseDoubleClick" Handler="Item_MouseDoubleClick"/>
-
-
                     </Style>
                 </ListBox.ItemContainerStyle>
 
@@ -222,8 +214,7 @@
                      
 
             <!-- Selected item info-->
-            <Border Grid.Row="4" 
-                    Background="{StaticResource RedPastelBrush}">
+            <Border Grid.Row="4">
                 
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -237,15 +228,13 @@
                     
                     <!-- Name-->
                     <TextBlock Grid.Column="0"
-                               Style="{StaticResource InfoTextblock}"
-                               Padding="3,2,3,2"
+                               Style="{StaticResource InfoTextblock2}"
                                Text="{Binding SelectedDrive.Directory.SelectedItem.Name}"
                                />
 
                     <!-- Creation time -->
                     <TextBlock Grid.Column="1" 
-                               Style="{StaticResource InfoTextblock}"
-                               Padding="3,2,3,2"
+                               Style="{StaticResource InfoTextblock2}"
                                Text="{Binding SelectedDrive.Directory.SelectedItem.CreationTime}"
                                />
                 </Grid>

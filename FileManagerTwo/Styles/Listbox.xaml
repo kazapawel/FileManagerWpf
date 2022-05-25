@@ -19,9 +19,9 @@
    
     <!-- DIRECTORY listbox-->
     <Style TargetType="{x:Type ListBox}" x:Key="DirectoryDisplayListboxStyle">
-        <Setter Property="Background" Value="{StaticResource BackgroundMediumDarkBrush}"/>
+        <Setter Property="Background" Value="{StaticResource BackgroundMainBrush}"/>
         <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="Margin" Value="3"/>
+        <Setter Property="Margin" Value="0"/>
         <Setter Property="VerticalAlignment" Value="Top"/>
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Visible"/>

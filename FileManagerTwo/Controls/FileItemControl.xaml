@@ -28,10 +28,11 @@
 
         
         <!-- Image -->
-        <Image Grid.Column="0" 
+        <Image Grid.Column="0"
+               Style="{StaticResource BasicImageStyle}"
                Source="{Binding Path=Type, Converter={StaticResource FiletypeToImageConverter}}"
-               Width="22" 
-               Height="22"           
+               Width="17" 
+               Height="17"
                />
 
         <!-- Name -->
@@ -51,6 +52,7 @@
                    Margin="5 0 2 0"
                    Width="70"
                    HorizontalAlignment="Right"
+                   FontFamily="Cascadia Mono"
                    />
 
     </Grid>
