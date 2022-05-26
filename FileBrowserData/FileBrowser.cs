@@ -6,7 +6,6 @@ namespace FileBrowserData
 {
     /// <summary>
     /// This is a single file browser module. It contains list of all drives.
-    /// TO DO: methods for manipulating files etc.
     /// </summary>
     public class FileBrowser
     {

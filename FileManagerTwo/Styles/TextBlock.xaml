@@ -32,12 +32,12 @@
 
     <!--#endregion-->
     
-    <!-- Basic textblock -->
+    <!-- BASIC textblock -->
     <Style TargetType="{x:Type TextBlock}" x:Key="BasicTextblock" BasedOn="{StaticResource CascadiaMono}">
         <Setter Property="FontSize" Value="15"/>
     </Style>
 
-    <!-- INFO textblock-->
+    <!-- INFO textblock -->
     <Style TargetType="{x:Type TextBlock}" x:Key="InfoTextblock" BasedOn="{StaticResource CascadiaMono}">
         <Setter Property="Padding" Value="3,1,3,1"/>
         <Setter Property="FontSize" Value="12"/>
@@ -45,21 +45,21 @@
         <Setter Property="Background" Value="{StaticResource BackgroundMainBrush}"/>
     </Style>
 
-    <!-- INFO textblock 2-->
+    <!-- INFO 2 textblock -->
     <Style TargetType="{x:Type TextBlock}" x:Key="InfoTextblock2" BasedOn="{StaticResource CascadiaMono}">
         <Setter Property="Padding" Value="3,2,3,2"/>
         <Setter Property="Foreground" Value="{StaticResource ForegroundMainBrush}"/>
         <Setter Property="Background" Value="{StaticResource RedPastelBrush}"/>
     </Style>
 
-    <!-- ITEM textblock style-->
+    <!-- ITEM textblock style -->
     <Style TargetType="{x:Type TextBlock}" x:Key="ItemTextblock" BasedOn="{StaticResource BasicTextblock}">
         <Setter Property="FontSize" Value="14"/>
         <Setter Property="Padding" Value="3"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
     </Style>
 
-    <!-- Popup context menu item style -->
+    <!-- POPUP context menu item style -->
     <Style TargetType="{x:Type TextBlock}" x:Key="ContextmenuTextblock" BasedOn="{StaticResource FiraSansLight}">
         <Setter Property="Foreground" Value="{StaticResource ForegroundMainBrush}"/>
     </Style>

@@ -4,10 +4,11 @@
 
     <!-- MAIN COLORS -->
     
+
     <!-- Background black color -->
     <Color x:Key="BackgroundBlackColor">#0a0a0a</Color>
     <SolidColorBrush x:Key="BackgroundBlackBrush" Color="{StaticResource BackgroundBlackColor}"/>
-
+    
     <!-- Background main color -->
     <Color x:Key="BackgroundMainColor">#282c34</Color>
     <SolidColorBrush x:Key="BackgroundMainBrush" Color="{StaticResource BackgroundMainColor}"/>
@@ -15,10 +16,11 @@
     <!-- Foreground main color -->
     <Color x:Key="ForegroundMainColor">#dcdfe4</Color>
     <SolidColorBrush x:Key="ForegroundMainBrush" Color="{StaticResource ForegroundMainColor}"/>
+    
+    <!-- Foreground dark color -->
+    <Color x:Key="ForegroundDarkColor">#616161</Color>
+    <SolidColorBrush x:Key="ForegroundDarkBrush" Color="{StaticResource ForegroundDarkColor}"/>
 
-    <!-- Border color -->
-    <Color x:Key="BorderColor">#616161</Color>
-    <SolidColorBrush x:Key="BorderBrush" Color="{StaticResource BorderColor}"/>
     
     <!--#endregion-->
     
@@ -65,9 +67,7 @@
     <Color x:Key="ForegrounRegularColor">#e8e6e1</Color>
     <SolidColorBrush x:Key="ForegroundRegularBrush" Color="{StaticResource ForegrounRegularColor}"/>
 
-    <!-- Foreground dark color -->
-    <Color x:Key="ForegroundDarkColor">#616161</Color>
-    <SolidColorBrush x:Key="ForegroundDarkBrush" Color="{StaticResource ForegroundDarkColor}"/>
+    
 
     <!-- Foreground red color -->
     <Color x:Key="RedPastel">#CD4B49</Color>

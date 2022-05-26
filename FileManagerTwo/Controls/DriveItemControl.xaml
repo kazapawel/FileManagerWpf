@@ -15,11 +15,11 @@
                    />
 
             <!-- Drive file system -->
-            <TextBlock Style="{StaticResource BasicTextblock}"
+            <!--<TextBlock Style="{StaticResource BasicTextblock}"
                        FontSize="14"
                        FontWeight="Light"
                        Text="{Binding Name}"
-                       HorizontalAlignment="Center"/>
+                       HorizontalAlignment="Center"/>-->
 
 
         </StackPanel>

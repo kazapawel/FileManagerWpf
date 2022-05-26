@@ -7,7 +7,7 @@
         <Setter Property="WindowStyle" Value="None"/>
         <Setter Property="AllowsTransparency" Value="True"/>
         <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ForegroundDarkBrush}"/>
         <Setter Property="Background" Value="{StaticResource BackgroundMainBrush}"/>
         <Setter Property="Foreground" Value="{StaticResource ForegroundMainBrush}"/>
         <Setter Property="WindowChrome.WindowChrome">
@@ -15,7 +15,7 @@
                 <WindowChrome UseAeroCaptionButtons="True"
                               GlassFrameThickness="0"
                               CornerRadius="0"
-                              CaptionHeight="40"
+                              CaptionHeight="30"
                               ResizeBorderThickness="12"/>
             </Setter.Value>
         </Setter>

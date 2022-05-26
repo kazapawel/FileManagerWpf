@@ -27,6 +27,11 @@ namespace FileManagerTwo
         /// <summary>
         /// 
         /// </summary>
+        public string CombineInfo => string.Join(" | ",Name,VolumeLabel, DriveFormat, SizeInfo);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public string VolumeLabel => string.IsNullOrEmpty(model.Info.VolumeLabel) ? "no name" : model.Info.VolumeLabel;
 
         /// <summary>
@@ -52,7 +57,7 @@ namespace FileManagerTwo
         /// <summary>
         /// 
         /// </summary>
-        public string SizeInfo => $"{HelperMethods.ConvertSize(model.Info.TotalFreeSpace)} / {HelperMethods.ConvertSize(model.Info.TotalSize)}";
+        public string SizeInfo => $"free: {HelperMethods.ConvertSize(model.Info.TotalFreeSpace)} / {HelperMethods.ConvertSize(model.Info.TotalSize)}";
 
         public long FreeSpace => model.Info.AvailableFreeSpace;
         public long TotalSize => model.Info.TotalSize;
