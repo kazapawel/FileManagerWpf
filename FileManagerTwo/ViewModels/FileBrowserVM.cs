@@ -2,6 +2,8 @@
 using FileBrowserServices;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Management;
+using System.ServiceModel.Channels;
 
 namespace FileManagerTwo
 {
@@ -72,7 +74,7 @@ namespace FileManagerTwo
         #region METHODS
 
         /// <summary>
-        /// Returns collections of driveitemViewModels.
+        /// Returns collections of DriveItemsViewModels.
         /// </summary>
         private ObservableCollection<DriveItemVM> GetDrives() =>
             new(filesService.GetAllDrives().Select(drive => new DriveItemVM(drive)));
@@ -86,9 +88,11 @@ namespace FileManagerTwo
             // Gets path of selected item in current directory
             var path = SelectedDrive.Directory.SelectedItem.FullPath;
 
-            // If item is a file, opens it 
+            // If item is a file, opens it
             if (SelectedDrive.Directory.SelectedItem.Type == FileItemType.File)
                 filesService.OpenFile(path);
+
+            // Else refreshes content of selected directory
             else
                 OpenDirectory(path);
         }

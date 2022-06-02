@@ -54,7 +54,8 @@ namespace FileBrowserData
                 Items = directoryInfo.GetFileSystemInfos().Select(item => new FileItem(item)).OrderBy(x => x.Type);
             }
             catch (UnauthorizedAccessException ex)
-            {              
+            {
+                
             }
 
             //If there is no parent directory, sets this directory as parent

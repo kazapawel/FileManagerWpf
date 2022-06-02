@@ -25,6 +25,7 @@ namespace FileManagerTwo
             FileBrowserLeftVM = new FileBrowserVM();
             FileBrowserRightVM = new FileBrowserVM();
 
+            // This checks fonts
 
             var f = new List<string>();
             // Enumerate the current set of system fonts,
@@ -35,6 +36,5 @@ namespace FileManagerTwo
                 f.Add(fontFamily.Source);
             }
         }
-
     }
 }

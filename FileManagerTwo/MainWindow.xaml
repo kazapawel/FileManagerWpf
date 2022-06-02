@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:FileManagerTwo"
         mc:Ignorable="d"
         Title="MainWindow" 
-        Width="1050"
+        Width="750"
         WindowStartupLocation="CenterScreen"
         Style="{StaticResource MainWindowStyle}">
 

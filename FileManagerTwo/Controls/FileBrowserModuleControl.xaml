@@ -32,91 +32,45 @@
 
             </Grid.RowDefinitions>
 
-            <!--#endregion-->            
-            
+            <!--#endregion-->                       
             
             <!--#region  DRIVES SECTION-->      
-            
-                
-                <!--<Grid.ColumnDefinitions>
 
-                    --><!-- Drives list --><!--
-                    <ColumnDefinition Width="3*"/>
+            <!-- DRIVES LIST listbox-->
+            <ListBox Grid.Row="0"
+                     x:Name="drivesList"
+                     Style="{StaticResource DrivesListboxStyle}"
+                     ItemsSource="{Binding Drives}"
+                     SelectedItem="{Binding SelectedDrive, Mode=TwoWay}"
+                     ItemContainerStyle="{StaticResource DrivesItemStyle}"
+                     />
 
-                    --><!-- Selected drives info --><!--
-                    <ColumnDefinition Width="*"/>
-
-                </Grid.ColumnDefinitions>
-                
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>-->
-                
-
-                <!-- DRIVES LIST listbox-->
-                <ListBox  
-                         Grid.Row="0"
-                         x:Name="drivesList"
-                         Style="{StaticResource DrivesListboxStyle}"
-                         ItemsSource="{Binding Drives}"
-                         SelectedItem="{Binding SelectedDrive, Mode=TwoWay}"
-                         ItemContainerStyle="{StaticResource DrivesItemStyle}"
-                         />
-
-                <!-- SELECTED drive info-->
-
+            <!-- SELECTED drive info-->
             <StackPanel Grid.Row="1">
-                <TextBlock 
-                           Style="{StaticResource InfoTextblock}"
+
+                <TextBlock Style="{StaticResource InfoTextblock}"
                            Text="{Binding SelectedDrive.CombineInfo}"
                            />
+                
                 <ProgressBar Orientation="Horizontal" 
-                                     HorizontalAlignment="Stretch"
-                                     MinWidth="100"
-                                     Margin="5"
-                                     Height="3"
-                                     Value="{Binding SelectedDrive.Percentage, Mode=OneWay}"
-                                     />
+                             HorizontalAlignment="Stretch"
+                             MinWidth="100"
+                             Margin="5"
+                             Height="3"
+                             Value="{Binding SelectedDrive.Percentage, Mode=OneWay}"
+                             />
             </StackPanel>
                 
-
-            <!--<StackPanel>
-                        --><!-- Volume label --><!--
-                        <TextBlock Style="{StaticResource InfoTextblock}"
-                                   Text="{Binding SelectedDrive.VolumeLabel}"
-                                   Background="DarkOrchid"
-                                   />
-
-                        --><!-- Drive format--><!--
-                        <TextBlock Style="{StaticResource InfoTextblock}"
-                                   Text="{Binding SelectedDrive.DriveFormat}"
-                                   Background="CadetBlue"
-                                   />
-
-                        --><!-- Total size--><!--
-                        <TextBlock Style="{StaticResource InfoTextblock}"
-                                   Text="{Binding SelectedDrive.SizeInfo}"
-                                   Background="DarkGoldenrod"
-                                   />
-
-                        --><!-- Size bar --><!--
-                        
-                    </StackPanel>-->
-                
-            
-
             <!--#endregion-->
 
-            <!--#region DIRECTORY CONTENT -->          
+            <!--#region DIRECTORY CONTENT -->
+            
             <!-- Full path-->
-
             <TextBlock Grid.Row="2"
                        Style="{StaticResource InfoTextblock}"
                        Text="{Binding SelectedDrive.Directory.FullPath}"
                        FontSize="14"
-                       Margin="2"
-                       
+                       Margin="2"                     
                        />
             
             <!-- Items listbox-->
@@ -221,7 +175,6 @@
                         </ContextMenu.Items>
                     </ContextMenu>
                 </ListBox.ContextMenu>
-                
             </ListBox>
                      
 
@@ -236,8 +189,7 @@
                         <!-- Creation time-->
                         <ColumnDefinition Width="auto"/>
                     </Grid.ColumnDefinitions>
-                    
-                    
+                                      
                     <!-- Name-->
                     <TextBlock Grid.Column="0"
                                Style="{StaticResource InfoTextblock2}"
@@ -254,7 +206,7 @@
             </Border>
 
             <!--#endregion-->
-
+            
         </Grid>
     </Border>
 </UserControl>
